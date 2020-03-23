@@ -259,7 +259,51 @@ void Tree::preorder(Node* start, std::string& s){
 }
 
 
+void Tree::inorder(Node* start, std::string& s) {
+	/*
+	Goes through the tree using the inorder rule and edits a string adding the traversed nodes' values
+	Input:
+		start (Node*) - starting node for the traversal
+		s (string) - value of the traversed node
+	Output:
+		none, string s is being changed through reference
+	@author: Victor
+	*/
+	if (start == NULL)
+		return;
+	inorder(start->left, s);
+	s += std::to_string(start->value) + ", ";
+	inorder(start->right, s);
+}
 
+void Tree::postorder(Node* start, std::string& s) {
+	/*
+	Goes through the tree using the postorder rule and edits a string adding the traversed nodes' values
+	Input:
+		start (Node*) - starting node for the traversal
+		s (string) - value of the traversed node
+	Output:
+		none, string s is being changed through reference
+	@author: Victor
+	*/
+	if (start == NULL)
+		return;
+	postorder(start->left, s);
+	postorder(start->right, s);
+	s += std::to_string(start->value) + ", ";
+}
+
+int Tree::countEdges() {
+	/*
+	Returns the number of edges in the tree
+	Input:
+		-
+	Output:
+		int
+	@author: Victor
+	*/
+	return nr_node - 1;
+}
 
 
 int Tree::countNodes() {
@@ -272,6 +316,28 @@ int Tree::countNodes() {
 	@author: Stefan
 	*/
 	return nr_node;
+}
+
+int Tree::height(Node* root) {
+	/*
+	Returns the maximum height(depth) of the tree
+	Input:
+		root (Node*) - root node of the tree, the point we start the search from
+	Output:
+		int
+	@author: Victor
+	*/
+	if (root == NULL)
+		return 0;
+	else
+	{
+		int leftH = height(root->left);
+		int rightH = height(root->right);
+		if (leftH > rightH)
+			return leftH + 1;
+		else
+			return rightH + 1;
+	}
 }
 
 bool Tree::is_empty() {

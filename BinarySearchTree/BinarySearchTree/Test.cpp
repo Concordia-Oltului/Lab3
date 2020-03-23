@@ -3,7 +3,6 @@
 #include "Node.h"
 #include "Tree.h"
 
-
 void test_sons() {
 	Node* a = new Node;
 	Node* b = new Node;
@@ -87,6 +86,56 @@ void test_preorder() {
 	assert(s.compare("8, 3, 1, 7, 5, 10, 15, ") == 0);
 }
 
+void test_inorder() {
+	Tree t;
+	assert(t.is_empty() == true);
+	assert(t.insert(8) == true);
+	assert(t.insert(3) == true);
+	assert(t.insert(10) == true);
+	assert(t.insert(1) == true);
+	assert(t.insert(7) == true);
+	assert(t.insert(5) == true);
+	assert(t.insert(15) == true);
+	assert(t.is_empty() == false);
+	assert(t.countNodes() == 7);
+	std::string s = "";
+	t.inorder(t.get_first(), s);
+	assert(s.compare("1, 3, 5, 7, 8, 10, 15, ") == 0);
+}
+
+void test_postorder() {
+	Tree t;
+	assert(t.is_empty() == true);
+	assert(t.insert(8) == true);
+	assert(t.insert(3) == true);
+	assert(t.insert(10) == true);
+	assert(t.insert(1) == true);
+	assert(t.insert(7) == true);
+	assert(t.insert(5) == true);
+	assert(t.insert(15) == true);
+	assert(t.is_empty() == false);
+	assert(t.countNodes() == 7);
+	std::string s = "";
+	t.postorder(t.get_first(), s);
+	assert(s.compare("1, 5, 7, 3, 15, 10, 8, ") == 0);
+}
+
+void test_height() {
+	Tree t;
+	assert(t.is_empty() == true);
+	assert(t.insert(8) == true);
+	assert(t.insert(3) == true);
+	assert(t.insert(10) == true);
+	assert(t.insert(1) == true);
+	assert(t.insert(7) == true);
+	assert(t.insert(5) == true);
+	assert(t.insert(15) == true);
+	assert(t.is_empty() == false);
+	assert(t.countNodes() == 7);
+	int height = t.height(t.get_first());
+	assert(height == 4);
+}
+
 
 
 void runAllTests() {
@@ -95,4 +144,7 @@ void runAllTests() {
 	test_add();
 	test_remove();
 	test_preorder();
+	test_inorder();
+	test_postorder();
+	test_height();
 }

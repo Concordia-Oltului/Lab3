@@ -23,7 +23,15 @@ public:
 
 	void preorder(Node* start, std::string& s);
 
+	void inorder(Node* start, std::string& s);
+	
+	void postorder(Node* start, std::string& s);
+
 	int countNodes();
+	
+	int countEdges();
+
+	int height(Node* root);
 
 	bool is_empty();
 
