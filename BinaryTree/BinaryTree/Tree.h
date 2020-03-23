@@ -10,7 +10,9 @@ public:
 
 	void insert(int val);
 
-	void del(int val);
+	void remove(int val);
+
+//	Node* find_min(Node* iterator, Node* start, Node* end);
 
 	int countNodes();
 

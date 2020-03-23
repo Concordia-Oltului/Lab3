@@ -30,15 +30,18 @@ void test_get_value() {
 void test_add() {
 	Tree t;
 	assert(t.is_empty() == true);
-	t.insert(3);
-	t.insert(5);
-	t.insert(4);
-	t.insert(2);
-	t.insert(7);
 	t.insert(8);
+	t.insert(3);
+	t.insert(10);
+	t.insert(1);
+	t.insert(6);
+	t.insert(5);
+	t.insert(7);
 	t.insert(9);
+	t.insert(13);
+	t.insert(15);
 	assert(t.is_empty() == false);
-	assert(t.countNodes() == 7);
+	assert(t.countNodes() == 10);
 
 }
 

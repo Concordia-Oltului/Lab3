@@ -1,7 +1,4 @@
 #pragma once
-
-#define NULL -111111;
-
 class Node
 {
 public:
@@ -20,6 +17,7 @@ public:
 	int sons();
 
 	~Node();
+
 
 
 };
