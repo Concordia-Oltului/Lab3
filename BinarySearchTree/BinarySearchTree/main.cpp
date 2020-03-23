@@ -6,5 +6,5 @@ using namespace std;
 int main()
 {
     runAllTests();
-    std::cout << "Hello World!\n";
+    cout << "That's all! Tests passed!\n";
 }

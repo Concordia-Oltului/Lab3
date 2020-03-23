@@ -69,6 +69,7 @@ void test_remove() {
 	assert(t.is_empty() == true);
 	assert(t.countNodes() == 0);
 }
+
 void test_preorder() {
 	Tree t;
 	assert(t.is_empty() == true);

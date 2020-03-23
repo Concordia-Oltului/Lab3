@@ -1,21 +1,22 @@
 #include "Node.h"
 #include <iostream>
 
-Node::Node()
-{
+Node::Node(){
+	// @author: Stefan
 	value = NULL;
 	left = nullptr;
 	right = nullptr;
 }
 
 Node::Node(int val) {
+	// @author: Stefan
 	value = val;
 	left = nullptr;
 	right = nullptr;
 }
 
-int Node::get_value()
-{
+int Node::get_value(){
+	// @author: Stefan
 	return value;
 }
 
@@ -26,7 +27,7 @@ bool Node::is_leaf() {
 		-
 	Output:
 		bool
-
+	@author: Stefan
 	*/
 
 	if (left == nullptr && right == nullptr)
@@ -41,7 +42,7 @@ int Node::sons() {
 		-
 	Output:
 		int
-
+	@author: Stefan
 	*/
 	if (left == nullptr && right == nullptr)
 		return 0;
@@ -54,6 +55,7 @@ int Node::sons() {
 }
 
 Node::~Node() {
-	left = nullptr;
-	right = nullptr;
+	// @author: Stefan
+	delete left;
+	delete right;
 }
